@@ -11,11 +11,11 @@ export const App = ()=> {
   const [bad, setBad] = useState(0)
 let feedbacks = { good, neutral, bad };
  const onClick = (el) => {
-    if (el === good) {
+    if (el === 'good') {
       setGood(good + 1);
-    } else if (el === neutral) {
+    } else if (el === 'neutral') {
       setNeutral(neutral + 1);
-    } else if (el === bad) {
+    } else if (el === 'bad') {
       setBad(bad + 1);
     }
   };
@@ -31,7 +31,7 @@ let feedbacks = { good, neutral, bad };
     : 0;
  };
 
-  console.log(countPositiveFeedbackPercentage());
+ 
     const totalFeedback = countTotalFeedback();
   const options = Object.keys({ good, neutral, bad });
     return (
@@ -40,6 +40,7 @@ let feedbacks = { good, neutral, bad };
           <Feedback
             onFeedback={onClick}
             options={options}
+       
           />
         </Section>
 
